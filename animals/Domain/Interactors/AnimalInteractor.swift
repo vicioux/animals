@@ -37,7 +37,7 @@ class AnimalInteractor : AnimalInteractorInput {
     }
     
     func searchAnimals(name: String?) {
-        repositoryLocator.findAnimals(byName: name) { (success, fail) in
+        repositoryLocator.findAnimals(byName: name, sortAsc: nil) { (success, fail) in
             guard let success = success else {
                 self.output.presentMessage(fail!)
                 return

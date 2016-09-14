@@ -30,7 +30,7 @@ class AnimalRepository: IAnimalRepository {
         
     }
     
-    func findAnimals(byName name: String?, completion: (success: [Animal]?, fail: NSError?) -> Void) {
+    func findAnimals(byName name: String?, sortAsc isAsc: Bool? = true, completion: (success: [Animal]?, fail: NSError?) -> Void) {
         
     }
 }

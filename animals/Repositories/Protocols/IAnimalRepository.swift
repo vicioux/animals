@@ -10,5 +10,5 @@ import Foundation
 
 protocol IAnimalRepository {
     func findAnimals(completion: (success: [Animal]?, fail: NSError?) -> Void)
-    func findAnimals(byName name: String?, completion: (success: [Animal]?, fail: NSError?) -> Void)
+    func findAnimals(byName name: String?, sortAsc isAsc: Bool?, completion: (success: [Animal]?, fail: NSError?) -> Void)
 }

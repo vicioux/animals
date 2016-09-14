@@ -42,7 +42,7 @@ class TestAnimalRepository: IAnimalRepository {
         completion(success: animals, fail: nil)
     }
     
-    func findAnimals(byName name: String?, completion: (success: [Animal]?, fail: NSError?) -> Void) {
+    func findAnimals(byName name: String?, sortAsc isAsc: Bool? = true, completion: (success: [Animal]?, fail: NSError?) -> Void) {
         
         var animals = [Animal]()
         let turtle = Animal(name: "turtle", picture: "")
@@ -55,12 +55,13 @@ class TestAnimalRepository: IAnimalRepository {
         animals.append(tiger)
         animals.append(lion)
         
+        let sorted = animals.sort{ $0.name!.localizedCaseInsensitiveCompare($1.name!) == .OrderedAscending }
         if let name = name where !name.isEmpty {
-            let filtered = animals.filter { $0.name!.containsString(name) }
+            let filtered = sorted.filter { $0.name!.containsString(name) }
             completion(success: filtered, fail: nil)
             return
         }
         
-        completion(success: animals, fail: nil)
+        completion(success: sorted, fail: nil)
     }
 }
