@@ -1,0 +1,20 @@
+PODS:
+  - BRYXBanner (0.5.2):
+    - BRYXBanner/Core (= 0.5.2)
+  - BRYXBanner/Core (0.5.2)
+  - HanekeSwift (0.10.1)
+  - UIScrollView-InfiniteScroll (0.9.1)
+
+DEPENDENCIES:
+  - BRYXBanner
+  - HanekeSwift
+  - UIScrollView-InfiniteScroll
+
+SPEC CHECKSUMS:
+  BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+  UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
+
+PODFILE CHECKSUM: fb632ea155d799024ac3f9f6d9e516fa2e8aa339
+
+COCOAPODS: 1.1.0.beta.1

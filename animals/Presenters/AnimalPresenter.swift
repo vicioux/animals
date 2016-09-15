@@ -8,13 +8,13 @@
 
 import Foundation
 
-/* OUTPUT */
+// MARK: OUTPUT Protocol
 protocol AnimalPresenterOutput {
     func setAnimals(currencies:[Animal])
     func showMessage(message: String)
 }
 
-/* INPUT */
+// MARK: INPUT Protocol
 protocol AnimalPresenterInput {
     func presentAnimals(animals: [Animal])
     func presentMessage(message: NSError)

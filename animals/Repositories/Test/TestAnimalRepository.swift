@@ -12,6 +12,25 @@ class TestAnimalRepository: IAnimalRepository {
     
     static let sharedInstance = TestAnimalRepository()
     
+    var animals = [Animal(name: "turtle", picture: ""),
+                   Animal(name: "pelican", picture: ""),
+                   Animal(name: "tiger", picture: ""),
+                   Animal(name: "lion", picture: ""),
+                   Animal(name: "buffalo", picture: ""),
+                   Animal(name: "elephant", picture: ""),
+                   Animal(name: "fish", picture: ""),
+                   Animal(name: "eagle", picture: ""),
+                   Animal(name: "dog", picture: ""),
+                   Animal(name: "cat", picture: ""),
+                   Animal(name: "alligator", picture: ""),
+                   Animal(name: "crow", picture: ""),
+                   Animal(name: "squirrel", picture: ""),
+                   Animal(name: "bear", picture: ""),
+                   Animal(name: "castor", picture: ""),
+                   Animal(name: "frog", picture: "")
+                  ]
+    
+    
     class var sharedDispatchInstance: TestAnimalRepository {
         
         struct Stactic {
@@ -28,40 +47,43 @@ class TestAnimalRepository: IAnimalRepository {
     
     func findAnimals(completion: (success: [Animal]?, fail: NSError?) -> Void) {
         
-        var animals = [Animal]()
-        let turtle = Animal(name: "turtle", picture: "")
-        let pelican = Animal(name: "pelican", picture: "")
-        let tiger = Animal(name: "tiger", picture: "")
-        let lion = Animal(name: "lion", picture: "")
-        
-        animals.append(turtle)
-        animals.append(pelican)
-        animals.append(tiger)
-        animals.append(lion)
-        
-        completion(success: animals, fail: nil)
+        findAnimals(byName: nil, sortAsc: nil, currentPage: 1) { (success, fail) in
+            completion(success: success, fail: fail)
+        }
     }
     
-    func findAnimals(byName name: String?, sortAsc isAsc: Bool? = true, completion: (success: [Animal]?, fail: NSError?) -> Void) {
+    func findAnimals(byName name: String?, sortAsc isAsc: Bool? = true, currentPage page: Int, completion: (success: [Animal]?, fail: NSError?) -> Void) {
         
-        var animals = [Animal]()
-        let turtle = Animal(name: "turtle", picture: "")
-        let pelican = Animal(name: "pelican", picture: "")
-        let tiger = Animal(name: "tiger", picture: "")
-        let lion = Animal(name: "lion", picture: "")
+        let data = findSortedAnimals(byName: name, sortAsc: isAsc ?? true, page: page)
+        completion(success: data, fail: nil)
         
-        animals.append(turtle)
-        animals.append(pelican)
-        animals.append(tiger)
-        animals.append(lion)
+    }
+
+    private func findSortedAnimals(byName name: String?, sortAsc isAsc: Bool = true, page: Int) -> [Animal] {
         
-        let sorted = animals.sort{ $0.name!.localizedCaseInsensitiveCompare($1.name!) == .OrderedAscending }
+        let orderCriteria = isAsc ? NSComparisonResult.OrderedAscending : NSComparisonResult.OrderedDescending
+        var filtered = false
+        var animals = self.animals
         if let name = name where !name.isEmpty {
-            let filtered = sorted.filter { $0.name!.containsString(name) }
-            completion(success: filtered, fail: nil)
-            return
+            animals = self.animals.filter { $0.name!.containsString(name) }
+            filtered = true
         }
         
-        completion(success: sorted, fail: nil)
+        let sorted = animals.sort{ $0.name!.localizedCaseInsensitiveCompare($1.name!) == orderCriteria }
+
+        if filtered {
+            return sorted
+        }
+        
+        let splitData = sorted.split()
+
+        if  page == 1 {
+            return splitData.left
+        } else if page == 2 {
+            return splitData.right
+        }
+        
+        let emptyArray: [Animal] = []
+        return emptyArray
     }
 }

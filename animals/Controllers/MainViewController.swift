@@ -7,24 +7,44 @@
 //
 
 import UIKit
+import UIScrollView_InfiniteScroll
 
 
-/* INPUT */
+// MARK: INPUT Protocol
 protocol MainViewControllerInput {
     func setAnimals(animals:[Animal])
     func showMessage(message: String)
 }
 
-/* OUTPUT */
+// MARK: OUTPUT Protocol
 protocol MainViewControllerOutput {
     func loadAnimals()
-    func searchAnimals(name: String?)
+    func searchAnimals(filter: Filter)
+}
+
+struct Filter {
+    var searchedText: String
+    var sortAsc: Bool
+    var pageCount: Int
 }
 
 class MainViewController: UIViewController, MainViewControllerInput {
 
     var output: AnimalInteractor!
     var animals: [Animal]?
+    
+    var pageCount: Int = 1
+    var sortAsc : Bool = true
+    var searchedText: String {
+        get {
+            return searchTextField.text ?? ""
+        }
+    }
+    var currentFilter: Filter {
+        get {
+            return Filter(searchedText: self.searchedText, sortAsc: self.sortAsc, pageCount: self.pageCount)
+        }
+    }
 
     @IBOutlet weak var mainTableView: UITableView!
     
@@ -46,12 +66,36 @@ class MainViewController: UIViewController, MainViewControllerInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.output.loadAnimals()
+        output.loadAnimals()
         
+        //Register Cells
         let tableNib = UINib(nibName: Identifier.tableViewCell, bundle: nil)
-        self.mainTableView.registerNib(tableNib, forCellReuseIdentifier: Identifier.tableViewCell)
+        mainTableView.registerNib(tableNib, forCellReuseIdentifier: Identifier.tableViewCell)
+        
+        //Configure Infinite Scroll
+        self.mainTableView.infiniteScrollIndicatorView = CustomInfiniteIndicator(frame: CGRectMake(0, 0, 34, 34))
+        self.mainTableView.infiniteScrollIndicatorMargin = -6
+        self.mainTableView.addInfiniteScrollWithHandler { (tableView) in
+            
+            self.loadMoreAnimals()
+            tableView.finishInfiniteScroll()
+        }
+
     }
     
+    func textFieldDidChange(textField: UITextField) {
+        let currentText = textField.text!
+        var filter = currentFilter
+        filter.searchedText = currentText.trimLeadingAndTrailingWhiteSpacesAndNewLines()
+        self.output.searchAnimals(filter)
+    }
+    
+    func loadMoreAnimals() {
+        pageCount += 1
+        self.output.searchAnimals(currentFilter)
+    }
+    
+    // MARK: Protocol functions
     func setAnimals(animals: [Animal]) {
         self.animals = animals
         mainTableView.reloadData()
@@ -60,15 +104,10 @@ class MainViewController: UIViewController, MainViewControllerInput {
     func showMessage(message: String) {
         //when this dont find something
     }
-    
-    func textFieldDidChange(textField: UITextField) {
-        let currentText = textField.text!
-        self.output.searchAnimals(currentText)
-    }
 
 }
 
-/* UITextFieldDelegate */
+// MARK: UITextFieldDelegate
 extension MainViewController: UITextFieldDelegate {
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -80,7 +119,7 @@ extension MainViewController: UITextFieldDelegate {
     }
 }
 
-/* UITableViewDataSource  UITableViewDelegate */
+// MARK: UITableViewDataSource  UITableViewDelegate
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

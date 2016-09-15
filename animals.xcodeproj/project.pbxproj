@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		605CB5D11D8A3CEC004040AA /* CustomInfiniteIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CB5D01D8A3CEC004040AA /* CustomInfiniteIndicator.swift */; };
+		605CB5D31D8A5DA8004040AA /* Array+Generals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CB5D21D8A5DA8004040AA /* Array+Generals.swift */; };
 		60A5C9E91D88B77C00B4D3D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5C9E81D88B77C00B4D3D7 /* AppDelegate.swift */; };
 		60A5C9EE1D88B77C00B4D3D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A5C9EC1D88B77C00B4D3D7 /* Main.storyboard */; };
 		60A5C9F01D88B77C00B4D3D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A5C9EF1D88B77C00B4D3D7 /* Assets.xcassets */; };
@@ -26,6 +28,7 @@
 		60A5CA3A1D88F3E800B4D3D7 /* AnimalDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5CA391D88F3E800B4D3D7 /* AnimalDomain.swift */; };
 		60A5CA3D1D88F4B800B4D3D7 /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5CA3C1D88F4B800B4D3D7 /* AnimalPresenter.swift */; };
 		60A5CA401D897AE400B4D3D7 /* String+Generals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5CA3F1D897AE400B4D3D7 /* String+Generals.swift */; };
+		BC3814E23DCEC196D1C3760A /* Pods_animals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7C899EC1C3A226DE202E80 /* Pods_animals.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0A515B1095C6A112BA0945 /* Pods-animals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-animals/Pods-animals.debug.xcconfig"; sourceTree = "<group>"; };
+		605CB5D01D8A3CEC004040AA /* CustomInfiniteIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomInfiniteIndicator.swift; path = Helpers/CustomInfiniteIndicator.swift; sourceTree = "<group>"; };
+		605CB5D21D8A5DA8004040AA /* Array+Generals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Generals.swift"; path = "Helpers/Array+Generals.swift"; sourceTree = "<group>"; };
 		60A5C9E51D88B77C00B4D3D7 /* animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = animals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A5C9E81D88B77C00B4D3D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A5C9ED1D88B77C00B4D3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +77,8 @@
 		60A5CA391D88F3E800B4D3D7 /* AnimalDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimalDomain.swift; path = Domain/DomainModels/AnimalDomain.swift; sourceTree = "<group>"; };
 		60A5CA3C1D88F4B800B4D3D7 /* AnimalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimalPresenter.swift; path = Presenters/AnimalPresenter.swift; sourceTree = "<group>"; };
 		60A5CA3F1D897AE400B4D3D7 /* String+Generals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Generals.swift"; path = "Helpers/String+Generals.swift"; sourceTree = "<group>"; };
+		761355AB5B776C0C0941E61C /* Pods-animals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animals.release.xcconfig"; path = "Pods/Target Support Files/Pods-animals/Pods-animals.release.xcconfig"; sourceTree = "<group>"; };
+		CC7C899EC1C3A226DE202E80 /* Pods_animals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_animals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3814E23DCEC196D1C3760A /* Pods_animals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521BA7339D98A797700FAB42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC7C899EC1C3A226DE202E80 /* Pods_animals.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		60A5C9DC1D88B77C00B4D3D7 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +122,8 @@
 				60A5C9FC1D88B77C00B4D3D7 /* animalsTests */,
 				60A5CA071D88B77C00B4D3D7 /* animalsUITests */,
 				60A5C9E61D88B77C00B4D3D7 /* Products */,
+				865B502879C8F0C8E2F1CD6B /* Pods */,
+				521BA7339D98A797700FAB42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -277,8 +296,19 @@
 			isa = PBXGroup;
 			children = (
 				60A5CA3F1D897AE400B4D3D7 /* String+Generals.swift */,
+				605CB5D01D8A3CEC004040AA /* CustomInfiniteIndicator.swift */,
+				605CB5D21D8A5DA8004040AA /* Array+Generals.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		865B502879C8F0C8E2F1CD6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F0A515B1095C6A112BA0945 /* Pods-animals.debug.xcconfig */,
+				761355AB5B776C0C0941E61C /* Pods-animals.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,9 +318,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60A5CA0D1D88B77C00B4D3D7 /* Build configuration list for PBXNativeTarget "animals" */;
 			buildPhases = (
+				531C60651FA9286852C1451A /* [CP] Check Pods Manifest.lock */,
 				60A5C9E11D88B77C00B4D3D7 /* Sources */,
 				60A5C9E21D88B77C00B4D3D7 /* Frameworks */,
 				60A5C9E31D88B77C00B4D3D7 /* Resources */,
+				4BF7D37786FF27A3F2989964 /* [CP] Embed Pods Frameworks */,
+				03F947A660228E8A285D8A3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -408,6 +441,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03F947A660228E8A285D8A3B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-animals/Pods-animals-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BF7D37786FF27A3F2989964 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-animals/Pods-animals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		531C60651FA9286852C1451A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60A5C9E11D88B77C00B4D3D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -423,6 +504,8 @@
 				60A5CA3D1D88F4B800B4D3D7 /* AnimalPresenter.swift in Sources */,
 				60A5CA2B1D88CDFB00B4D3D7 /* Animal.swift in Sources */,
 				60A5CA311D88D96F00B4D3D7 /* AnimalCell.swift in Sources */,
+				605CB5D11D8A3CEC004040AA /* CustomInfiniteIndicator.swift in Sources */,
+				605CB5D31D8A5DA8004040AA /* Array+Generals.swift in Sources */,
 				60A5CA211D88BFEE00B4D3D7 /* RepositoryLocator.swift in Sources */,
 				60A5CA3A1D88F3E800B4D3D7 /* AnimalDomain.swift in Sources */,
 				60A5CA281D88C49600B4D3D7 /* AnimalRepository.swift in Sources */,
@@ -567,6 +650,7 @@
 		};
 		60A5CA0E1D88B77C00B4D3D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F0A515B1095C6A112BA0945 /* Pods-animals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = animals/Info.plist;
@@ -578,6 +662,7 @@
 		};
 		60A5CA0F1D88B77C00B4D3D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 761355AB5B776C0C0941E61C /* Pods-animals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = animals/Info.plist;
@@ -652,6 +737,7 @@
 				60A5CA0F1D88B77C00B4D3D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60A5CA101D88B77C00B4D3D7 /* Build configuration list for PBXNativeTarget "animalsTests" */ = {
 			isa = XCConfigurationList;
@@ -660,6 +746,7 @@
 				60A5CA121D88B77C00B4D3D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60A5CA131D88B77C00B4D3D7 /* Build configuration list for PBXNativeTarget "animalsUITests" */ = {
 			isa = XCConfigurationList;
@@ -668,6 +755,7 @@
 				60A5CA151D88B77C00B4D3D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

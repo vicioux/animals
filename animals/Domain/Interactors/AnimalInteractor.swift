@@ -8,13 +8,13 @@
 
 import Foundation
 
-/* OUTPUT */
+// MARK: OUTPUT Protocol
 protocol AnimalInteractorOutput {
     func presentAnimals(animals: [Animal])
     func presentMessage(message: NSError)
 }
 
-/* INPUT */
+// MARK: INPUT Protocol
 protocol AnimalInteractorInput {
     func loadAnimals()
 }
@@ -31,13 +31,16 @@ class AnimalInteractor : AnimalInteractorInput {
                 self.output.presentMessage(fail!)
                 return
             }
-        
+            
             self.output.presentAnimals(success)
         }
     }
     
-    func searchAnimals(name: String?) {
-        repositoryLocator.findAnimals(byName: name, sortAsc: nil) { (success, fail) in
+    func searchAnimals(filter: Filter) {
+        repositoryLocator.findAnimals( byName: filter.searchedText,
+                                      sortAsc: filter.sortAsc,
+                                  currentPage: filter.pageCount) { (success, fail) in
+            
             guard let success = success else {
                 self.output.presentMessage(fail!)
                 return
