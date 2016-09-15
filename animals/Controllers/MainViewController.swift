@@ -34,6 +34,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
     var animals: [Animal]?
     
     var pageCount: Int = 1
+    let initialPageCount = 1
     var sortAsc : Bool = true
     var searchedText: String {
         get {
@@ -86,6 +87,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
     func textFieldDidChange(textField: UITextField) {
         let currentText = textField.text!
         var filter = currentFilter
+        self.pageCount = pageCount > initialPageCount ? initialPageCount : pageCount
         filter.searchedText = currentText.trimLeadingAndTrailingWhiteSpacesAndNewLines()
         self.output.searchAnimals(filter)
     }
@@ -97,8 +99,21 @@ class MainViewController: UIViewController, MainViewControllerInput {
     
     // MARK: Protocol functions
     func setAnimals(animals: [Animal]) {
-        self.animals = animals
+        
+        if pageCount <= initialPageCount {
+            self.animals = animals
+            mainTableView.reloadData()
+            return
+        }
+        
+        animals.forEach { [weak self] in
+            self?.animals?.append($0)
+        }
         mainTableView.reloadData()
+        
+//        mainTableView.beginUpdates()
+//        mainTableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 7, inSection: 0)], withRowAnimation: .Automatic)
+//        mainTableView.endUpdates()
     }
     
     func showMessage(message: String) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class AnimalCell: UITableViewCell {
     
@@ -25,6 +26,6 @@ class AnimalCell: UITableViewCell {
     
     func updateUI() {
         animalNameLabel.text = animal?.name
-        //self.animalImageView.hnk_setImageFromURL(NSURL(string:(animal?.picture)!))
+        self.animalImageView.hnk_setImageFromURL(NSURL(string:"http://www.universeofsymbolism.com/images/xlion-symbolism.jpg.pagespeed.ic.YPvRkLWxnO.jpg")!)
     }
 }
