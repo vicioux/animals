@@ -33,7 +33,15 @@ class MainViewController: UIViewController, MainViewControllerInput {
 
     // MARK: Vars
     var output: AnimalInteractor!
-    var animals: [Animal]?
+    var animals: [Animal]? {
+        didSet {
+            if animals?.count > 0 {
+                emptyMessageLabel.hidden = true
+            } else {
+                emptyMessageLabel.hidden = false
+            }
+        }
+    }
     
     private var pageCount: Int = 1
     private let initialPageCount = 1
@@ -63,6 +71,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
         didSet {
             searchTextField.title = "Search"
             searchTextField.returnKeyType = .Done
+            searchTextField.autocorrectionType = .No
             searchTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), forControlEvents: .EditingDidEndOnExit)
         }
     }
@@ -179,11 +188,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let animals = animals else {
-            emptyMessageLabel.hidden = false
             return 0
         }
         
-        emptyMessageLabel.hidden = true
         return animals.count
     }
     

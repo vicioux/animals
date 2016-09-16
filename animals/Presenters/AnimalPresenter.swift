@@ -30,8 +30,6 @@ class AnimalPresenter: AnimalPresenterInput {
     }
     
     func presentAnimals(animals: [Animal]) {
-        if animals.count > 0 {
-            self.output.setAnimals(animals)
-        }
+        self.output.setAnimals(animals)
     }
 }
