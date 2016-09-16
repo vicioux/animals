@@ -11,7 +11,7 @@ import Foundation
 class RepositoryLocator {
     
     static let sharedInstance = RepositoryLocator()
-    let useTestRepo = false;
+    let useTestRepo = true;
     
     func animalRepository() -> IAnimalRepository {
         if (useTestRepo) {

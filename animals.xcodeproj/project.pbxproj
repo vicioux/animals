@@ -10,6 +10,7 @@
 		6034F0A91D8B1032007CAB23 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034F0A81D8B1032007CAB23 /* APIClient.swift */; };
 		6034F0B21D8B678B007CAB23 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034F0B11D8B678B007CAB23 /* CustomError.swift */; };
 		6034F0B41D8B6A69007CAB23 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034F0B31D8B6A69007CAB23 /* AppNotification.swift */; };
+		6034F0BD1D8B84D0007CAB23 /* SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034F0BC1D8B84D0007CAB23 /* SortButton.swift */; };
 		605CB5D11D8A3CEC004040AA /* CustomInfiniteIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CB5D01D8A3CEC004040AA /* CustomInfiniteIndicator.swift */; };
 		605CB5D31D8A5DA8004040AA /* Array+Generals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605CB5D21D8A5DA8004040AA /* Array+Generals.swift */; };
 		60A5C9E91D88B77C00B4D3D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5C9E81D88B77C00B4D3D7 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		6034F0A81D8B1032007CAB23 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Repositories/Production/APIClient.swift; sourceTree = "<group>"; };
 		6034F0B11D8B678B007CAB23 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomError.swift; path = Models/CustomError.swift; sourceTree = "<group>"; };
 		6034F0B31D8B6A69007CAB23 /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNotification.swift; path = Helpers/AppNotification.swift; sourceTree = "<group>"; };
+		6034F0BC1D8B84D0007CAB23 /* SortButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortButton.swift; path = Helpers/SortButton.swift; sourceTree = "<group>"; };
 		605CB5D01D8A3CEC004040AA /* CustomInfiniteIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomInfiniteIndicator.swift; path = Helpers/CustomInfiniteIndicator.swift; sourceTree = "<group>"; };
 		605CB5D21D8A5DA8004040AA /* Array+Generals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Generals.swift"; path = "Helpers/Array+Generals.swift"; sourceTree = "<group>"; };
 		60A5C9E51D88B77C00B4D3D7 /* animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = animals.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,7 @@
 				605CB5D01D8A3CEC004040AA /* CustomInfiniteIndicator.swift */,
 				605CB5D21D8A5DA8004040AA /* Array+Generals.swift */,
 				6034F0B31D8B6A69007CAB23 /* AppNotification.swift */,
+				6034F0BC1D8B84D0007CAB23 /* SortButton.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				60A5C9E91D88B77C00B4D3D7 /* AppDelegate.swift in Sources */,
 				60A5CA261D88C1B900B4D3D7 /* TestAnimalRepository.swift in Sources */,
 				60A5CA371D88E0B300B4D3D7 /* AnimalInteractor.swift in Sources */,
+				6034F0BD1D8B84D0007CAB23 /* SortButton.swift in Sources */,
 				60A5CA3D1D88F4B800B4D3D7 /* AnimalPresenter.swift in Sources */,
 				60A5CA2B1D88CDFB00B4D3D7 /* Animal.swift in Sources */,
 				60A5CA311D88D96F00B4D3D7 /* AnimalCell.swift in Sources */,

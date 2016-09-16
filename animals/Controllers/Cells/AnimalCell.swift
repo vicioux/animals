@@ -25,7 +25,7 @@ class AnimalCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func updateUI() {
+    private func updateUI() {
         animalNameLabel.text = animal?.name
         animalDescriptionLabel.text = animal?.description
         self.animalImageView.hnk_setImageFromURL(NSURL(string:"http://www.universeofsymbolism.com/images/xlion-symbolism.jpg.pagespeed.ic.YPvRkLWxnO.jpg")!)

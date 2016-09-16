@@ -34,33 +34,43 @@ class MainViewController: UIViewController, MainViewControllerInput {
     var output: AnimalInteractor!
     var animals: [Animal]?
     
-    var pageCount: Int = 1
-    let initialPageCount = 1
-    var sortAsc : Bool = true
-    var searchedText: String {
+    private var pageCount: Int = 1
+    private let initialPageCount = 1
+    private var sortAsc : Bool = true
+    
+    private var searchedText: String {
         get {
             return searchTextField.text ?? ""
         }
     }
-    var currentFilter: Filter {
+    
+    private var currentFilter: Filter {
         get {
             return Filter(searchedText: self.searchedText, sortAsc: self.sortAsc, pageCount: self.pageCount)
-        }
-    }
-
-    @IBOutlet weak var mainTableView: UITableView!
-    
-    @IBOutlet weak var searchTextField: SkyFloatingLabelTextField! {
-        didSet {
-            searchTextField.title = "Search"
-            searchTextField.returnKeyType = .Done
-            searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), forControlEvents: .EditingDidEndOnExit)
         }
     }
     
     private struct Identifier
     {
         static let tableViewCell = "AnimalCell"
+    }
+
+    @IBOutlet private weak var mainTableView: UITableView!
+    
+    @IBOutlet weak var searchTextField: SkyFloatingLabelTextField! {
+        didSet {
+            searchTextField.title = "Search"
+            searchTextField.returnKeyType = .Done
+            searchTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), forControlEvents: .EditingDidEndOnExit)
+        }
+    }
+    
+    @IBOutlet private weak var sortButton: SortButton! {
+        didSet {
+            sortButton.respondsToActions = true
+            sortButton.userInteractionEnabled = true
+            sortButton.addTarget(self, action: #selector(sort(_:)), forControlEvents: .TouchUpInside)
+        }
     }
     
     override func awakeFromNib() {
@@ -87,7 +97,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
 
     }
     
-    func textFieldDidChange(textField: UITextField) {
+    @IBAction func textFieldDidEndEditing(textField: UITextField) {
         let currentText = textField.text!
         var filter = currentFilter
         self.pageCount = pageCount > initialPageCount ? initialPageCount : pageCount
@@ -95,7 +105,13 @@ class MainViewController: UIViewController, MainViewControllerInput {
         self.output.searchAnimals(filter)
     }
     
-    func loadMoreAnimals() {
+    @IBAction func sort(button: SortButton) {
+        self.pageCount = pageCount > initialPageCount ? initialPageCount : pageCount
+        self.sortAsc = button.isAsc
+        self.output.searchAnimals(currentFilter)
+    }
+    
+    private func loadMoreAnimals() {
         pageCount += 1
         self.output.searchAnimals(currentFilter)
     }
