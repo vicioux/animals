@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SkyFloatingLabelTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIScrollView-InfiniteScroll.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0F5A629997EC7413D1E9E396209BFF46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C2B1953A91633859BF7AD238FF567A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70A5FDBC9981B1DAEAE2F0FE9233E6E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,17 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F05225066D78BABA8BBD3AE85B1F7FB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A41403F78D6294CCE7B3C694EE53B1A2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C31A540DD6DB56404A28511F9FCEB0D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF40D851FE5D3B3C7BBA5A215670FED2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

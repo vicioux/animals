@@ -5,6 +5,7 @@ PODS:
   - BRYXBanner/Core (0.5.2)
   - HanekeSwift (0.10.1)
   - ObjectMapper (1.4.0)
+  - SkyFloatingLabelTextField (1.2.1)
   - UIScrollView-InfiniteScroll (0.9.1)
 
 DEPENDENCIES:
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - BRYXBanner
   - HanekeSwift
   - ObjectMapper (~> 1.2)
+  - SkyFloatingLabelTextField (~> 1.0)
   - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
@@ -19,8 +21,9 @@ SPEC CHECKSUMS:
   BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: d2a1449ca70ea87f362da2fac9a05fa23ae74fb3
+PODFILE CHECKSUM: 1ba86ebbdabe59156e08deba82470b3c11e6fb3a
 
 COCOAPODS: 1.1.0.beta.1

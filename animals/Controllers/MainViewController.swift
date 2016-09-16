@@ -8,6 +8,7 @@
 
 import UIKit
 import UIScrollView_InfiniteScroll
+import SkyFloatingLabelTextField
 
 
 // MARK: INPUT Protocol
@@ -49,9 +50,11 @@ class MainViewController: UIViewController, MainViewControllerInput {
 
     @IBOutlet weak var mainTableView: UITableView!
     
-    @IBOutlet weak var searchTextField: UITextField! {
+    @IBOutlet weak var searchTextField: SkyFloatingLabelTextField! {
         didSet {
-            searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), forControlEvents: .EditingChanged)
+            searchTextField.title = "Search"
+            searchTextField.returnKeyType = .Done
+            searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), forControlEvents: .EditingDidEndOnExit)
         }
     }
     
@@ -132,6 +135,7 @@ extension MainViewController: UITextFieldDelegate {
         
         return newLength <= 40
     }
+    
 }
 
 // MARK: UITableViewDataSource  UITableViewDelegate

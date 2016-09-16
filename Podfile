@@ -17,6 +17,9 @@ def default_pods
     # ObjectMapper
     #https://github.com/Hearst-DD/ObjectMapper
     pod 'ObjectMapper', '~> 1.2'
+    # SkyFloatingLabelTextField
+    #https://github.com/Skyscanner/SkyFloatingLabelTextField
+    pod 'SkyFloatingLabelTextField', '~> 1.0'
 end
 
 target 'animals' do
