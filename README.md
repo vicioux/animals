@@ -26,5 +26,5 @@ Pd: just open animals.xcworkspace
 
 # Response to questions 5 and 6.
 
-5. To accomplish this i used the Repository Pattern, creating a testing repository to get filtered, sorted and paginated dummy data, leaving the responsability to get data no matter how. It can be switched changin a variable to false in the repositoryLocator.
-6. The simplest approach to this is using a paginated list and leave responsibility to the "web service"
+* 5. To accomplish this i used the Repository Pattern, creating a testing repository to get filtered, sorted and paginated dummy data, leaving the responsability to get data no matter how. It can be switched changin a variable to false in the repositoryLocator.
+* 6. The simplest approach to this is using a paginated list and leave responsibility to the "web service"
