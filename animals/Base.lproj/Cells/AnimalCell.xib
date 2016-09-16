@@ -22,7 +22,7 @@
                         <color key="textColor" red="0.70054810209999996" green="0.70054810209999996" blue="0.70054810209999996" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TJU-h7-IYT">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="TJU-h7-IYT">
                         <rect key="frame" x="8" y="33.5" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="T6R-Rr-rX0"/>
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="290.5" y="355"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pokemon" width="1280" height="720"/>
+    </resources>
 </document>

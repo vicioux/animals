@@ -99,7 +99,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
             self.loadMoreAnimals()
             tableView.finishInfiniteScroll()
         }
-
+        
     }
     
     // MARK: IBActions
