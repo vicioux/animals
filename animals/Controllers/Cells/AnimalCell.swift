@@ -25,9 +25,16 @@ class AnimalCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        animalImageView.hnk_cancelSetImage()
+        animalImageView.image = nil
+    }
+    
     private func updateUI() {
         animalNameLabel.text = animal?.name
         animalDescriptionLabel.text = animal?.description
-        self.animalImageView.hnk_setImageFromURL(NSURL(string:"http://www.universeofsymbolism.com/images/xlion-symbolism.jpg.pagespeed.ic.YPvRkLWxnO.jpg")!)
+        let pictureUrl = NSURL(string:animal?.picture ?? "")!
+        self.animalImageView.hnk_setImageFromURL(pictureUrl)
     }
 }

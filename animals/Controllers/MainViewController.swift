@@ -31,6 +31,7 @@ struct Filter {
 
 class MainViewController: UIViewController, MainViewControllerInput {
 
+    // MARK: Vars
     var output: AnimalInteractor!
     var animals: [Animal]?
     
@@ -55,6 +56,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
         static let tableViewCell = "AnimalCell"
     }
 
+    // MARK: Outlets
     @IBOutlet private weak var mainTableView: UITableView!
     
     @IBOutlet weak var searchTextField: SkyFloatingLabelTextField! {
@@ -73,6 +75,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
         }
     }
     
+    // MARK: LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         Configurator.sharedInstance.configure(self)
@@ -97,6 +100,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
 
     }
     
+    // MARK: IBActions
     @IBAction func textFieldDidEndEditing(textField: UITextField) {
         let currentText = textField.text!
         var filter = currentFilter
@@ -111,6 +115,8 @@ class MainViewController: UIViewController, MainViewControllerInput {
         self.output.searchAnimals(currentFilter)
     }
     
+    
+    // MARK: Controller Separate functions
     private func loadMoreAnimals() {
         pageCount += 1
         self.output.searchAnimals(currentFilter)
