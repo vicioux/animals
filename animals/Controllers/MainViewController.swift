@@ -67,6 +67,8 @@ class MainViewController: UIViewController, MainViewControllerInput {
         }
     }
     
+    @IBOutlet weak var emptyMessageLabel: UILabel!
+    
     @IBOutlet private weak var sortButton: SortButton! {
         didSet {
             sortButton.respondsToActions = true
@@ -177,9 +179,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let animals = animals else {
+            emptyMessageLabel.hidden = false
             return 0
         }
         
+        emptyMessageLabel.hidden = true
         return animals.count
     }
     

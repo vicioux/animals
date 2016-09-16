@@ -71,6 +71,12 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="msK-c2-Obv"/>
                                         </connections>
                                     </tableView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opps we can't find Anything :(" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cN-C5-ugV">
+                                        <rect key="frame" x="152" y="257" width="296" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -79,6 +85,8 @@
                                     <constraint firstItem="DNi-Mi-Uf0" firstAttribute="centerY" secondItem="Jg6-PT-wuv" secondAttribute="centerY" id="JyD-Rj-6yz"/>
                                     <constraint firstItem="DNi-Mi-Uf0" firstAttribute="centerX" secondItem="Jg6-PT-wuv" secondAttribute="centerX" id="Kmm-oJ-rVU"/>
                                     <constraint firstItem="DNi-Mi-Uf0" firstAttribute="centerY" secondItem="Jg6-PT-wuv" secondAttribute="centerY" id="PhG-cE-LIF"/>
+                                    <constraint firstItem="5cN-C5-ugV" firstAttribute="centerX" secondItem="Jg6-PT-wuv" secondAttribute="centerX" id="W06-X8-6Aj"/>
+                                    <constraint firstItem="5cN-C5-ugV" firstAttribute="centerY" secondItem="Jg6-PT-wuv" secondAttribute="centerY" id="WQ9-iF-MBl"/>
                                     <constraint firstItem="DNi-Mi-Uf0" firstAttribute="height" secondItem="Jg6-PT-wuv" secondAttribute="height" id="iCx-uy-jnf"/>
                                     <constraint firstItem="DNi-Mi-Uf0" firstAttribute="width" secondItem="Jg6-PT-wuv" secondAttribute="width" id="tm8-MX-XyZ"/>
                                     <constraint firstItem="DNi-Mi-Uf0" firstAttribute="width" secondItem="Jg6-PT-wuv" secondAttribute="width" id="yUZ-qo-rOB"/>
@@ -142,6 +150,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="emptyMessageLabel" destination="5cN-C5-ugV" id="HYA-FA-xmg"/>
                         <outlet property="mainTableView" destination="DNi-Mi-Uf0" id="4O4-dC-NUA"/>
                         <outlet property="searchTextField" destination="6Q0-g9-TnK" id="Tmz-j7-bZM"/>
                         <outlet property="sortButton" destination="9WT-ys-6tx" id="Xf2-Vu-1md"/>
