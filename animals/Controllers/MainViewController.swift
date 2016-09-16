@@ -35,11 +35,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
     var output: AnimalInteractor!
     var animals: [Animal]? {
         didSet {
-            if animals?.count > 0 {
-                emptyMessageLabel.hidden = true
-            } else {
-                emptyMessageLabel.hidden = false
-            }
+           self.showEmptyMessage()
         }
     }
     
@@ -151,6 +147,15 @@ class MainViewController: UIViewController, MainViewControllerInput {
         mainTableView.endUpdates()
     }
     
+    // MARK: Controller Separate functions
+    private func showEmptyMessage() {
+        if animals?.count > 0 {
+            emptyMessageLabel.hidden = true
+        } else {
+            emptyMessageLabel.hidden = false
+        }
+    }
+    
     // MARK: Protocol functions
     func setAnimals(animals: [Animal]) {
         
@@ -188,6 +193,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let animals = animals else {
+            showEmptyMessage()
             return 0
         }
         
