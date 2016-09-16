@@ -17,20 +17,9 @@ extension AnimalPresenter: AnimalInteractorOutput { }
 class Configurator {
     
     // MARK: Object lifecycle
-    
-    class var sharedInstance: Configurator {
-        struct Static {
-            static var instance: Configurator?
-            static var token: dispatch_once_t = 0
-        }
-        dispatch_once(&Static.token) {
-            Static.instance = Configurator()
-        }
-        return Static.instance!
-    }
+    static let sharedInstance = Configurator()
     
     // MARK: Configuration
-    
     func configure(viewController: MainViewController) {
         
         let presenter = AnimalPresenter()

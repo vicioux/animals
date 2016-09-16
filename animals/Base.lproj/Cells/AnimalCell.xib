@@ -17,28 +17,46 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cocodrile" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3qa-Lf-xX2">
-                        <rect key="frame" x="158" y="67" width="249" height="23.5"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                        <rect key="frame" x="158" y="45" width="249" height="27.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                         <color key="textColor" red="0.70054810209999996" green="0.70054810209999996" blue="0.70054810209999996" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TJU-h7-IYT">
-                        <rect key="frame" x="8" y="8.5" width="141" height="141"/>
+                        <rect key="frame" x="8" y="8" width="141" height="141"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="141" id="T6R-Rr-rX0"/>
                             <constraint firstAttribute="height" constant="141" id="oqg-xe-HEW"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This a really long animal descrition used by me.This a really long animal descrition used by me" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vom-jN-4vW">
+                        <rect key="frame" x="158" y="80" width="249" height="57.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="3qa-Lf-xX2" secondAttribute="trailing" id="6aL-qF-m6x"/>
                     <constraint firstItem="3qa-Lf-xX2" firstAttribute="width" secondItem="qZd-zS-UQI" secondAttribute="width" multiplier="0.6" id="9g0-ah-g0e"/>
+                    <constraint firstItem="vom-jN-4vW" firstAttribute="width" secondItem="3qa-Lf-xX2" secondAttribute="width" id="DUs-0a-rn2"/>
+                    <constraint firstItem="vom-jN-4vW" firstAttribute="top" secondItem="3qa-Lf-xX2" secondAttribute="bottom" constant="7.5" id="F1Q-JV-aJb"/>
+                    <constraint firstItem="vom-jN-4vW" firstAttribute="leading" secondItem="3qa-Lf-xX2" secondAttribute="leading" id="Td7-QD-pHz"/>
+                    <constraint firstItem="vom-jN-4vW" firstAttribute="leading" secondItem="TJU-h7-IYT" secondAttribute="trailing" constant="8" id="e7f-UO-jtW"/>
                     <constraint firstItem="TJU-h7-IYT" firstAttribute="centerY" secondItem="qZd-zS-UQI" secondAttribute="centerY" id="fLR-BO-N5A"/>
-                    <constraint firstItem="3qa-Lf-xX2" firstAttribute="centerY" secondItem="qZd-zS-UQI" secondAttribute="centerY" id="pmQ-Ah-qYG"/>
+                    <constraint firstItem="3qa-Lf-xX2" firstAttribute="centerY" secondItem="qZd-zS-UQI" secondAttribute="centerY" constant="-20" id="pmQ-Ah-qYG"/>
+                    <constraint firstItem="3qa-Lf-xX2" firstAttribute="leading" secondItem="TJU-h7-IYT" secondAttribute="trailing" constant="9" id="xFx-Qw-LGa"/>
                     <constraint firstAttribute="leadingMargin" secondItem="TJU-h7-IYT" secondAttribute="leading" id="xau-n6-pHS"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="6aL-qF-m6x"/>
+                        <exclude reference="e7f-UO-jtW"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="animalDescriptionLabel" destination="vom-jN-4vW" id="zGN-mk-4h4"/>
                 <outlet property="animalImageView" destination="TJU-h7-IYT" id="5Cn-J4-SC2"/>
                 <outlet property="animalNameLabel" destination="3qa-Lf-xX2" id="9s0-aU-Ou3"/>
             </connections>

@@ -13,6 +13,7 @@ class AnimalCell: UITableViewCell {
     
     @IBOutlet weak var animalImageView: UIImageView!
     @IBOutlet weak var animalNameLabel: UILabel!
+    @IBOutlet weak var animalDescriptionLabel: UILabel!
     
     var animal: Animal? {
         didSet{
@@ -26,6 +27,7 @@ class AnimalCell: UITableViewCell {
     
     func updateUI() {
         animalNameLabel.text = animal?.name
+        animalDescriptionLabel.text = animal?.description
         self.animalImageView.hnk_setImageFromURL(NSURL(string:"http://www.universeofsymbolism.com/images/xlion-symbolism.jpg.pagespeed.ic.YPvRkLWxnO.jpg")!)
     }
 }

@@ -12,38 +12,23 @@ class TestAnimalRepository: IAnimalRepository {
     
     static let sharedInstance = TestAnimalRepository()
     
-    var animals = [Animal(name: "turtle", picture: ""),
-                   Animal(name: "pelican", picture: ""),
-                   Animal(name: "tiger", picture: ""),
-                   Animal(name: "lion", picture: ""),
-                   Animal(name: "buffalo", picture: ""),
-                   Animal(name: "elephant", picture: ""),
-                   Animal(name: "fish", picture: ""),
-                   Animal(name: "eagle", picture: ""),
-                   Animal(name: "dog", picture: ""),
-                   Animal(name: "cat", picture: ""),
-                   Animal(name: "alligator", picture: ""),
-                   Animal(name: "crow", picture: ""),
-                   Animal(name: "squirrel", picture: ""),
-                   Animal(name: "bear", picture: ""),
-                   Animal(name: "castor", picture: ""),
-                   Animal(name: "frog", picture: "")
+    var animals = [ Animal(name: "turtle", description: "turtle", picture: ""),
+                    Animal(name: "pelican", description: "pelican", picture: ""),
+                    Animal(name: "tiger", description: "tiger", picture: ""),
+                    Animal(name: "lion", description: "lion", picture: ""),
+                    Animal(name: "buffalo", description: "buffalo", picture: ""),
+                    Animal(name: "elephant", description: "elephant", picture: ""),
+                    Animal(name: "fish", description: "fish", picture: ""),
+                    Animal(name: "eagle", description: "eagle", picture: ""),
+                    Animal(name: "dog", description: "dog", picture: ""),
+                    Animal(name: "cat", description: "cat", picture: ""),
+                    Animal(name: "alligator", description: "alligator", picture: ""),
+                    Animal(name: "crow", description: "crow", picture: ""),
+                    Animal(name: "squirrel", description: "squirrel", picture: ""),
+                    Animal(name: "bear", description: "bear", picture: ""),
+                    Animal(name: "castor", description: "castor", picture: ""),
+                    Animal(name: "frog", description: "frog", picture: "")
                   ]
-    
-    
-    class var sharedDispatchInstance: TestAnimalRepository {
-        
-        struct Stactic {
-            static var onceToken:dispatch_once_t = 0
-            static var instance: TestAnimalRepository? = nil
-        }
-        
-        dispatch_once(&Stactic.onceToken) {
-            Stactic.instance = TestAnimalRepository()
-        }
-        
-        return Stactic.instance!
-    }
     
     func findAnimals(completion: (success: [Animal]?, fail: NSError?) -> Void) {
         

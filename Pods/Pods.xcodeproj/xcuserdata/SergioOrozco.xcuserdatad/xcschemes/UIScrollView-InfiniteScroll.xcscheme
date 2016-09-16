@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "996790B783CC8629DCE11B82D08C7336"
+               BlueprintIdentifier = "7F05225066D78BABA8BBD3AE85B1F7FB"
                BuildableName = "UIScrollView_InfiniteScroll.framework"
                BlueprintName = "UIScrollView-InfiniteScroll"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "996790B783CC8629DCE11B82D08C7336"
+            BlueprintIdentifier = "7F05225066D78BABA8BBD3AE85B1F7FB"
             BuildableName = "UIScrollView_InfiniteScroll.framework"
             BlueprintName = "UIScrollView-InfiniteScroll"
             ReferencedContainer = "container:Pods.xcodeproj">

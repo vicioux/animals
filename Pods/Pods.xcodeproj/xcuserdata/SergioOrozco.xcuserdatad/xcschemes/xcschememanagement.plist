@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>BRYXBanner-BRYXBanner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -15,6 +20,11 @@
 			<false/>
 		</dict>
 		<key>HanekeSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,17 +47,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>434AA900AF5B34BC99B12AE29B43B6A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>75AEEEFD7E431013E8E60009251D5797</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>996790B783CC8629DCE11B82D08C7336</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F05225066D78BABA8BBD3AE85B1F7FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A41403F78D6294CCE7B3C694EE53B1A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C31A540DD6DB56404A28511F9FCEB0D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

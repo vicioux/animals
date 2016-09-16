@@ -25,8 +25,8 @@ class AnimalPresenter: AnimalPresenterInput {
     var output: AnimalPresenterOutput!
     
     func presentMessage(message: NSError) {
-        //let error = CustomError.ErrorFrom(message)
-        self.output.showMessage("something wrong happend")
+        let error = CustomError.ErrorFrom(message)
+        self.output.showMessage(error.description)
     }
     
     func presentAnimals(animals: [Animal]) {

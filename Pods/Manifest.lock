@@ -1,20 +1,26 @@
 PODS:
+  - Alamofire (3.5.0)
   - BRYXBanner (0.5.2):
     - BRYXBanner/Core (= 0.5.2)
   - BRYXBanner/Core (0.5.2)
   - HanekeSwift (0.10.1)
+  - ObjectMapper (1.4.0)
   - UIScrollView-InfiniteScroll (0.9.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.0)
   - BRYXBanner
   - HanekeSwift
+  - ObjectMapper (~> 1.2)
   - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
   BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   UIScrollView-InfiniteScroll: 14e204c50ca4040467e1cbfa141dad7a18919b56
 
-PODFILE CHECKSUM: fb632ea155d799024ac3f9f6d9e516fa2e8aa339
+PODFILE CHECKSUM: d2a1449ca70ea87f362da2fac9a05fa23ae74fb3
 
 COCOAPODS: 1.1.0.beta.1

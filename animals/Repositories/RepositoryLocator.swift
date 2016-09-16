@@ -11,21 +11,7 @@ import Foundation
 class RepositoryLocator {
     
     static let sharedInstance = RepositoryLocator()
-    let useTestRepo = true;
-    
-    class var sharedDispatchInstance: RepositoryLocator {
-        
-        struct Stactic {
-            static var onceToken:dispatch_once_t = 0
-            static var instance: RepositoryLocator? = nil
-        }
-        
-        dispatch_once(&Stactic.onceToken) {
-            Stactic.instance = RepositoryLocator()
-        }
-        
-        return Stactic.instance!
-    }
+    let useTestRepo = false;
     
     func animalRepository() -> IAnimalRepository {
         if (useTestRepo) {

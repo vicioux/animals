@@ -8,8 +8,15 @@ def default_pods
     # object mapper
     # https://github.com/bryx-inc/BRYXBanner
     pod 'BRYXBanner'
-
+    # infinite scroll
+    # https://github.com/pronebird/UIScrollView-InfiniteScroll
     pod 'UIScrollView-InfiniteScroll'
+    # alamofire
+    # https://github.com/Alamofire/Alamofire
+    pod 'Alamofire', '~> 3.0'
+    # ObjectMapper
+    #https://github.com/Hearst-DD/ObjectMapper
+    pod 'ObjectMapper', '~> 1.2'
 end
 
 target 'animals' do

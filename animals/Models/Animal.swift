@@ -7,15 +7,30 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Animal {
+class Animal: Mappable {
     var name : String?
+    var description : String?
     var picture : String?
     
     init() {}
     
-    init(name: String, picture: String) {
+    init(name: String, description: String, picture: String) {
         self.name = name
+        self.description = description
         self.picture = picture
     }
+    
+    required convenience init?(_ map: Map) {
+        self.init()
+        mapping(map)
+    }
+    
+    func mapping(map: Map) {
+        name <- map["name"]
+        description <- map["description"]
+        picture <- map["image"]
+    }
+    
 }

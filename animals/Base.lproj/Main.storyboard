@@ -28,7 +28,7 @@
                                             <constraint firstAttribute="width" constant="186" id="XpX-Ej-iVg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="XpX-Ej-iVg"/>

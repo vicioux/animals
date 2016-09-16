@@ -7,30 +7,53 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class AnimalRepository: IAnimalRepository {
     
     static let sharedInstance = AnimalRepository()
+    let limit = 8
     
-    class var sharedDispatchInstance: AnimalRepository {
+    private func getOffset(page: Int) -> Int{
         
-        struct Stactic {
-            static var onceToken:dispatch_once_t = 0
-            static var instance: AnimalRepository? = nil
+        if page > 0 {
+            return limit * (page - 1)
         }
         
-        dispatch_once(&Stactic.onceToken) {
-            Stactic.instance = AnimalRepository()
-        }
-        
-        return Stactic.instance!
+        return 0
     }
     
     func findAnimals(completion: (success: [Animal]?, fail: NSError?) -> Void) {
-        
+        findAnimals(byName: nil, sortAsc: nil, currentPage: 1) { (success, fail) in
+            completion(success: success, fail: fail)
+        }
     }
     
     func findAnimals(byName name: String?, sortAsc isAsc: Bool? = true, currentPage page: Int, completion: (success: [Animal]?, fail: NSError?) -> Void) {
         
+        var params : [ String : AnyObject] = [
+            "offset": getOffset(page),
+            "limit": limit,
+            "asc": isAsc ?? true,
+        ]
+        
+        if let name = name where !name.isEmpty {
+            params["search"] = name
+        }
+        
+        APIClient.sharedInstance.request(.GET, APIClient.getUrl("animals"), parameters: params,
+            encoding: .URLEncodedInURL).responseResultObject {
+                (request, response) -> Void in
+                switch response.result {
+                    
+                case let .Success(valueJSON):
+                    let items = Mapper<Animal>().mapArray(valueJSON["animals"]!)
+                    completion(success: items, fail: nil)
+                    
+                case .Failure(let alamoFireError):
+                    completion(success: nil, fail: alamoFireError)
+                }
+        }
     }
+
 }

@@ -117,7 +117,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
     }
     
     func showMessage(message: String) {
-        //when this dont find something
+        AppNotification.show(nil, subtitle: message, type:NotificationType.Error.color)
     }
 
 }
