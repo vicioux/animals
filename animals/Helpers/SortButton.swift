@@ -10,7 +10,7 @@ import UIKit
 
 typealias SortChangeState = (checkbox: SortButton) -> ()
 
-@objc class SortButton: UIButton {
+class SortButton: UIButton {
     
     private var sortDESCImageName = "down-thin-chevron"
     private var sortASCImageName = "up-thin-chevron"
