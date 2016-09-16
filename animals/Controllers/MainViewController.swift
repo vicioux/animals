@@ -116,6 +116,24 @@ class MainViewController: UIViewController, MainViewControllerInput {
         self.output.searchAnimals(currentFilter)
     }
     
+    private func addMore(animals :[Animal]) {
+        mainTableView.beginUpdates()
+        
+        animals.forEach { [weak self] in
+            self?.animals?.append($0)
+        }
+        
+        var index = 0
+        var indexPaths: [NSIndexPath] = [NSIndexPath]()
+        for _ in animals {
+            indexPaths.append(NSIndexPath(forRow: index, inSection: 0))
+            index += 1
+        }
+        
+        mainTableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Bottom)
+        mainTableView.endUpdates()
+    }
+    
     // MARK: Protocol functions
     func setAnimals(animals: [Animal]) {
         
@@ -125,14 +143,7 @@ class MainViewController: UIViewController, MainViewControllerInput {
             return
         }
         
-        animals.forEach { [weak self] in
-            self?.animals?.append($0)
-        }
-        mainTableView.reloadData()
-        
-//        mainTableView.beginUpdates()
-//        mainTableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 7, inSection: 0)], withRowAnimation: .Automatic)
-//        mainTableView.endUpdates()
+        addMore(animals)
     }
     
     func showMessage(message: String) {
