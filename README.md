@@ -17,7 +17,7 @@ Used libraries:
     * https://github.com/Alamofire/Alamofire
 
 * ObjectMapper
-    *https://github.com/Hearst-DD/ObjectMapper
+    * https://github.com/Hearst-DD/ObjectMapper
 
 * SkyFloatingLabelTextField
     * https://github.com/Skyscanner/SkyFloatingLabelTextField
